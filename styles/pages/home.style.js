@@ -52,11 +52,32 @@ const styles = StyleSheet.create({
         elevation: 5,
       },
       banner:{
-        borderWidth:1,
         flex:1,
         alignItems:"center",
         justifyContent:"center",
-
+      },
+      tempData:{
+        flexDirection:"row",
+        justifyContent:"flex-end",
+        alignItems:"flex-end"
+      },
+      tempMetric:{
+        marginBottom:25,
+      },
+      weatherContainer:{
+        alignItems:"center"
+      },
+      date:{
+        borderWidth:1,
+        marginVertical:20,
+        flexDirection:"row",
+        justifyContent:"space-evenly",
+      },
+      locationContainer:{
+        flexDirection:"row",
+        alignItems:"center",
+        justifyContent:"center",
+        gap:5
       }
     });
 

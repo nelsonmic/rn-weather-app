@@ -1,8 +1,12 @@
 import { Link, Stack, useRouter } from "expo-router";
 import  Svg, { Path} from 'react-native-svg'
 import { View, Text, SafeAreaView, TouchableOpacity, Image } from "react-native";
+import styleConstants from "../styles/utils/constants.style";
 import styles from "../styles/pages/home.style";
 import backgroundImage from "../assets/images/cloud.png"
+
+const {banner,tempDataContainer,tempData,tempMetric, date, weatherContainer, locationContainer, location}= styles
+const {fw500, fw600, lgText, mdText, colorPrimary, colorWhite100, colorWhite200, colorGrey200} = styleConstants
 
 export default function Home() {
   const router = useRouter()
@@ -26,34 +30,34 @@ export default function Home() {
                 </TouchableOpacity>
             </View>
 
-            <View style={styles.banner}>
-              
+            <View style={banner}>
+
               <View>
                 {/* <Image source="" /> */}
               </View>
 
-              <View style={styles.tempDataContainer}>
+              <View style={tempDataContainer}>
 
-                <View style={styles.tempData}>
-                  <Text style={styles.tempDegree}>15</Text>
-                  <Text style={styles.tempMetric}>℃</Text>
+                <View style={tempData}>
+                  <Text style={[lgText, fw500, colorWhite200]}>15</Text>
+                  <Text style={[colorGrey200, mdText, tempMetric]}>℃</Text>
                 </View>
 
-                <View>
-                  <Text style={styles.weather}>Shower</Text>
+                <View style={weatherContainer}>
+                  <Text style={[mdText, colorWhite200, fw600]}>Shower</Text>
                 </View>
 
-                <View>
+                <View style={date}>
                   <Text>Today</Text>
                   <Text>.</Text>
                   <Text>Fri, 5 Jun</Text>
                 </View>
 
-                <View>
-                  <Svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" color="#000">
+                <View style={locationContainer}>
+                  <Svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" color="#fff">
                     <Path d="M0 0h24v24H0z" fill="none"></Path><Path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"></Path>
                   </Svg>
-                  <Text style={styles.location}>Helsinki</Text>
+                  <Text style={location}>Helsinki</Text>
                 </View>
 
               </View>

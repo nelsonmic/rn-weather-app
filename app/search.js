@@ -3,11 +3,11 @@ import { Link, Stack } from "expo-router";
 
 export default function Details() {
   return (
-<SafeAreaView style={styles.container}>
-<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-<Link href="/search">Go search</Link>
-</View>
-</SafeAreaView>
+      <SafeAreaView style={styles.container}>
+            <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+                  <Link href="/search">Go search</Link>
+            </View>
+      </SafeAreaView>
   );
 }
 

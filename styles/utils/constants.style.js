@@ -57,6 +57,9 @@ const styleConstants = StyleSheet.create({
       },
       fw900:{
             fontWeight:900
+      },
+      ff100:{
+            fontFamily:"Raleway"
       }
 })
 

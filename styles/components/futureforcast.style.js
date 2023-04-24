@@ -1,4 +1,5 @@
 import { StyleSheet} from "react-native";
+import { COLORS } from "../../constants";
 
 const styles = StyleSheet.create({
       container:{
@@ -7,7 +8,7 @@ const styles = StyleSheet.create({
             marginBottom:15,
             padding:30,
             alignItems:"center",
-            backgroundColor:"#1E213A"
+            backgroundColor:COLORS.primary
       },
       textContainer:{
             flexDirection:"row",

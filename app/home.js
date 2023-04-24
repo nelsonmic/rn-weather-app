@@ -3,22 +3,24 @@ import  Svg, { Path} from 'react-native-svg'
 import { View, Text, SafeAreaView, TouchableOpacity, Image, ScrollView} from "react-native";
 import styleConstants from "../styles/utils/constants.style";
 import styles from "../styles/pages/home.style";
+import {COLORS} from "../constants"
 import backgroundImage from "../assets/images/cloud.png"
 import FutureForecast from "../components/FutureForecast";
+import Highlights from "../components/Highlights";
 
-const {bannerContainer, headerContainer, bgImage, banner,tempDataContainer,tempData,tempMetric, dateContainer, weatherContainer, locationContainer, searchButton, searchText}= styles
-const {fw500, fw600, smText, xmdText, mdText, lgText, colorWhite200, colorGrey200, colorGrey300, ff100} = styleConstants
+const {bannerContainer, headerContainer, bgImage, banner,tempDataContainer,tempData,tempMetric, dateContainer, weatherContainer, locationContainer, searchButton, searchText, highlightContainer, futureForcastContainer}= styles
+const {ff500, ff600, ff700, smText, xmdText, headerText, mdText, lgText, colorWhite200, colorGrey200, colorGrey300, ff100, ff200} = styleConstants
 
 const Home =()=> {
   const router = useRouter()
   return(
-        <SafeAreaView style={{flex:1, backgroundColor:"#1E213A"}}>
+        <SafeAreaView style={{flex:1, backgroundColor:COLORS.secondary}}>
           <Stack.Screen options={{headerShown: false}}/>
-          <ScrollView endFillColor={"#100E1D"} contentInsetAdjustmentBehavior="automatic" keyboardDismissMode="on-drag" overScrollMode="never" showsVerticalScrollIndicator={false}
-            style={{backgroundColor: "#1E213A"}}
+          <ScrollView endFillColor={COLORS.secondary} contentInsetAdjustmentBehavior="automatic" keyboardDismissMode="on-drag" overScrollMode="never" showsVerticalScrollIndicator={false}
+            style={{backgroundColor: COLORS.primary}}
           >
           <View style={headerContainer}>
-                <TouchableOpacity style={searchButton} onPress={()=> router.push("/search")}>
+                <TouchableOpacity style={searchButton} onPress={()=> router.push("search")}>
                   <Text style={[searchText, ff100]}>Search for places</Text>
                 </TouchableOpacity>
 
@@ -34,58 +36,57 @@ const Home =()=> {
             <Image source={backgroundImage} style={bgImage} />
             <View style={banner}>
                 <Image 
-                  source={{uri:"https://raw.githubusercontent.com/visualcrossing/WeatherIcons/2de560da89d87de44e3ca2a6593a12c19c8346d3/SVG/1st%20Set%20-%20Color/partly-cloudy-day.svg"}} 
-                  style={{height:174, width:150, backgroundColor:"blue", marginVertical:20}}
+                  source={{uri:"https://raw.githubusercontent.com/visualcrossing/WeatherIcons/2de560da89d87de44e3ca2a6593a12c19c8346d3/SVG/1st%20Set%20-%20Color/partly-cloudy-day.svg", headers: { 'Accept': 'image/*'}}} 
+                  style={{height:174, width:150, marginVertical:20, alignSelf: "center", borderWidth:1}}
                 />
               <View style={tempDataContainer}>
 
                 <View style={tempData}>
-                  <Text style={[lgText, fw500, colorWhite200, ff100]}>15</Text>
+                  <Text style={[lgText, ff500, colorWhite200, ff200]}>15</Text>
                   <Text style={[colorGrey200, mdText, tempMetric, ff100]}>℃</Text>
                 </View>
 
                 <View style={weatherContainer}>
-                  <Text style={[xmdText, colorGrey200, fw600, ff100]}>Shower</Text>
+                  <Text style={[xmdText, colorGrey200, ff600, ff100]}>Shower</Text>
                 </View>
 
                 <View style={dateContainer}>
-                  <Text style={[smText, colorGrey300, fw500, ff100]}>Today</Text>
-                  <Text style={[smText, colorGrey300, fw500, ff100]}>.</Text>
-                  <Text style={[smText, colorGrey300, fw500, ff100]}>Fri, 5 Jun</Text>
+                  <Text style={[smText, colorGrey300, ff500, ff100]}>Today</Text>
+                  <Text style={[smText, colorGrey300, ff500, ff100]}>.</Text>
+                  <Text style={[smText, colorGrey300, ff500, ff100]}>Fri, 5 Jun</Text>
                 </View>
 
                 <View style={locationContainer}>
                   <Svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" color="#88869D">
                     <Path d="M0 0h24v24H0z" fill="none"></Path><Path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"></Path>
                   </Svg>
-                  <Text style={[smText, colorGrey300, fw500, ff100]}>Helsinki</Text>
+                  <Text style={[smText, colorGrey300, ff500, ff100]}>Helsinki</Text>
                 </View>
 
               </View>
             </View>
           </View>
 
-          <View style={{dispaly:"grid", flex:1, flexWrap:"wrap", flexDirection:"row", justifyContent:"space-between", height:"100%", backgroundColor:"#100E1D", padding:24}}>
-            <FutureForecast foreCastData={"sds"}/>
-            <FutureForecast />
-            <FutureForecast />
-            <FutureForecast />
-            <FutureForecast />
-            <FutureForecast />
-            <FutureForecast />
-            <FutureForecast />
-            <FutureForecast />
-            <FutureForecast />
-            <FutureForecast />
-            <FutureForecast />
-            <FutureForecast />
-            <FutureForecast />
-            <FutureForecast />
+          <View style={{ backgroundColor:COLORS.secondary, padding:24}}>
+            <View style={futureForcastContainer}>
+                  <FutureForecast />
+                  <><FutureForecast forecastData={{ date: "Sun, 7 jun", temp1: 16, temp2: 11 }} /><FutureForecast forecastData={{ date: "Mon, 8 jun", temp1: 16, temp2: 11 }} /><FutureForecast forecastData={{ date: "Tue, 9 jun", temp1: 16, temp2: 11 }} /><FutureForecast forecastData={{ date: "Wed, 10 jun", temp1: 16, temp2: 11 }} /><FutureForecast forecastData={{ date: "Thur, 11 jun", temp1: 16, temp2: 11 }} /></>
+            </View>
+
+            <View style={highlightContainer}>
+                  <Text style={[colorWhite200, ff200, ff700, headerText, {marginVertical:40}]}>Today's Highlights</Text>
+                  <View>
+                        <Highlights type={"Wind Status"} highlightData={{value:7, unit:"mph"}} />
+                        <Highlights type={"Humidity"} highlightData={{value:84, unit:"%"}}/>
+                        <Highlights type={"Visibility"} highlightData={{value:"6,4", unit:"miles"}}/>
+                        <Highlights type={"Air Pressure"} highlightData={{value:998, unit:"mb"}}/>
+                  </View>
+            </View>
           </View>
           </ScrollView>
     
         </SafeAreaView>
-  );
+      );
 }
 
 export default Home;

@@ -1,66 +1,68 @@
 import { StyleSheet } from "react-native";
+import {COLORS, SIZES, FONTS} from "../../constants"
 
 const styleConstants = StyleSheet.create({
       colorPrimary: {
-            color:"#1E213A"
+            color:COLORS.primary
       },
       colorSecondary: {
-            color:"#100E1D"
+            color:COLORS.secondary
       },
       colorWhite100:{
-            color:"#FFFFFF"
+            color:COLORS.white100
       },
       colorWhite200:{
-            color:"#E7E7EB"
+            color:COLORS.white200
       },
       colorGrey100:{
-            color:"#6E707A"
+            color:COLORS.grey100
       },
       colorGrey200:{
-            color:"#A09FB1"
+            color:COLORS.grey200
       },
       colorGrey300:{
-            color:"#88869D"
+            color:COLORS.grey300
+      },
+      colorBlue100:{
+            color:COLORS.blue100
       },
       xsmText:{
-            fontSize:16
+            fontSize:SIZES.xsm
       },
       smText:{
-            fontSize:18
+            fontSize:SIZES.sm
       },
       xmdText:{
-            fontSize:36
+            fontSize:SIZES.xmd
       },
       mdText:{
-            fontSize:64
+            fontSize:SIZES.md
       },
       lgText:{
-            fontSize:144
+            fontSize:SIZES.lg
       },
       headerText:{
-            fontSize:24
+            fontSize:SIZES.header
       },
-      fw400:{
-            fontWeight:400
+      ff400:{
+            fontFamily:FONTS.ff400
       },
-      fw500:{
-            fontWeight:500
+      ff500:{
+            fontFamily:FONTS.ff500
       },
-      fw600:{
-            fontWeight:600
+      ff600:{
+            fontFamily:FONTS.ff600
       },
-      fw700:{
-            fontWeight:700
+      ff700:{
+            fontFamily:FONTS.ff700
       },
-      fw800:{
-            fontWeight:800
+      ff800:{
+            fontFamily:FONTS.ff800
       },
-      fw900:{
-            fontWeight:900
+      ff900:{
+            fontFamily:FONTS.ff900
       },
-      ff100:{
-            fontFamily:"Raleway"
-      }
+      
 })
 
 export default styleConstants;

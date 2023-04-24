@@ -2,6 +2,7 @@ import {
   StyleSheet,
   Dimensions
 } from "react-native";
+import {COLORS} from "../../constants"
 
 const styles = StyleSheet.create({
   headerContainer: {
@@ -12,7 +13,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24
   },
   searchButton: {
-    backgroundColor: "#6E707A",
+    backgroundColor: COLORS.grey400,
     textAlign: "center",
     paddingVertical: 12,
     paddingHorizontal: 20,
@@ -33,7 +34,7 @@ const styles = StyleSheet.create({
   locationButton: {
     paddingVertical: 8,
     paddingHorizontal: 8,
-    backgroundColor: "#6E707A",
+    backgroundColor: COLORS.grey400,
     borderRadius: 50,
     shadowColor: '#000',
     shadowOffset: {
@@ -87,6 +88,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     gap: 5
+  },
+  futureForcastContainer:{
+    flex:1, 
+    flexWrap:"wrap", 
+    flexDirection:"row", 
+    justifyContent:"space-between"
+  },
+  highlightContainer:{
+
   }
 });
 

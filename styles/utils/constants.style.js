@@ -23,6 +23,9 @@ const styleConstants = StyleSheet.create({
       colorGrey300:{
             color:COLORS.grey300
       },
+      colorGrey400:{
+            color:COLORS.grey400
+      },
       colorBlue100:{
             color:COLORS.blue100
       },

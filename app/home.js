@@ -1,5 +1,5 @@
 import { Link, Stack, useRouter } from "expo-router";
-import  Svg, { Path} from 'react-native-svg'
+import  Svg, { Path, SvgCssUri} from 'react-native-svg'
 import { View, Text, SafeAreaView, TouchableOpacity, Image, ScrollView} from "react-native";
 import styleConstants from "../styles/utils/constants.style";
 import styles from "../styles/pages/home.style";
@@ -35,9 +35,9 @@ const Home =()=> {
           <View style={bannerContainer}>
             <Image source={backgroundImage} style={bgImage} />
             <View style={banner}>
-                <Image 
-                  source={{uri:"https://raw.githubusercontent.com/visualcrossing/WeatherIcons/2de560da89d87de44e3ca2a6593a12c19c8346d3/SVG/1st%20Set%20-%20Color/partly-cloudy-day.svg", headers: { 'Accept': 'image/*'}}} 
-                  style={{height:174, width:150, marginVertical:20, alignSelf: "center", borderWidth:1}}
+                <SvgCssUri 
+                  uri="https://raw.githubusercontent.com/visualcrossing/WeatherIcons/2de560da89d87de44e3ca2a6593a12c19c8346d3/SVG/1st%20Set%20-%20Color/partly-cloudy-day.svg"
+                  style={{height:174, width:150, marginVertical:20, alignSelf: "center"}}
                 />
               <View style={tempDataContainer}>
 

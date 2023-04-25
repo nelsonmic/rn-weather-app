@@ -2,28 +2,38 @@ import { StyleSheet } from "react-native-web";
 import { COLORS } from "../../constants";
 
 const styles = StyleSheet.create({
-      container: {
+      wrapper:{
+            paddingHorizontal: 24, 
+            gap:40  
+      },
+      container:{
             flex: 1,
             backgroundColor:"#1E213A"
       },
-      wrapper:{
-            paddingHorizontal: 24,   
-      },
-      searchContainer: {
+      searchContainer:{
             flexDirection: "row",
             gap:10,
             justifyContent:"space-between",
             alignItems:"center"
       },
-      textField:{
+      textFieldContainer:{
+            flexDirection:"row",
+            flex:1,
+            alignItems:"center",
+            gap:10,
             borderWidth:1,
             borderColor: COLORS.white200,
-            flex:1,
             padding:12
       },
+      textField:{
+            flex:1,
+      },
       searchButton:{
-            padding:12,
+            padding:14,
             backgroundColor: COLORS.blue100
+      },
+      searchedLocationContainer:{
+
       }
     });
 

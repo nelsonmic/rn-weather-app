@@ -1,38 +1,25 @@
-import { View, SafeAreaView, StyleSheet } from "react-native";
-import { Link, Stack } from "expo-router";
+import { View, SafeAreaView, TextInput, TouchableOpacity, Text } from "react-native";
+import { Link } from "expo-router";
+import styles from "../styles/pages/search.style";
+import styleConstants from "../styles/utils/constants.style";
+import { color } from "react-native-reanimated";
+
+const { container, searchContainer, wrapper, textField, searchButton } = styles;
+const {colorWhite200, ff600, ff500, xsmText} = styleConstants;
 
 export default function Details() {
   return (
-<SafeAreaView style={styles.container}>
-<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-<Link href="/search">Go search</Link>
-</View>
-</SafeAreaView>
+      <SafeAreaView style={ container }>
+            <View style={ wrapper }>
+                  <View style={ searchContainer }>
+                        <View style={}>
+                              <TextInput style={[colorWhite200, ff500, xsmText, textField]} placeholder="search location"/>
+                        </View>
+                        <TouchableOpacity>
+                              <Text style={[colorWhite200, ff600, xsmText, searchButton]}>Search</Text>
+                        </TouchableOpacity>
+                  </View>
+            </View>
+      </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        alignItems: "center",
-        padding: 24,
-        backgroundColor:"#1E213A"
-      },
-      main: {
-        borderColor:"blue",
-        borderStyle:"solid",
-        borderWidth:1,
-        flex: 1,
-        justifyContent: "center",
-        maxWidth: 960,
-        marginHorizontal: "auto",
-      },
-      title: {
-        fontSize: 64,
-        fontWeight: "bold",
-      },
-      subtitle: {
-        fontSize: 36,
-        color: "#38434D",
-      },
-    });
